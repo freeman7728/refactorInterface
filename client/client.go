@@ -22,4 +22,6 @@ func (client *CourseClientImpl) LearnPiano() {
 }
 func NewClient() CourseClient {
 	return &CourseClientImpl{}
+	//虽然返回的是一个指针，但是编译器自动将其视为实现了接口的类型
+	//所以最后返回是一个CourseClient
 }

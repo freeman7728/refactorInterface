@@ -5,12 +5,13 @@ import (
 )
 
 type ICourseService interface {
+	LearnGo()
 }
 type CourseServiceImpl struct {
 	cli client.CourseClient
 }
 
-func NewCourseService(cli client.CourseClient) *CourseServiceImpl {
+func NewCourseService(cli client.CourseClient) ICourseService {
 	//使得cli不再是需要频繁创建的对象了，节省了资源
 	return &CourseServiceImpl{cli: cli}
 }
