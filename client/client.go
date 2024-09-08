@@ -2,26 +2,20 @@ package client
 
 import "fmt"
 
-type CourseClient interface {
-	LearnGo()
-	LearnJava()
-	LearnPiano()
+// CourseClient 直接创建类，而不是接口
+type CourseClient struct {
 }
 
-type CourseClientImpl struct {
-}
-
-func (client *CourseClientImpl) LearnGo() {
+func (client *CourseClient) LearnGo() {
 	fmt.Println("Learn Go")
 }
-func (client *CourseClientImpl) LearnJava() {
+func (client *CourseClient) LearnJava() {
 	fmt.Println("Learn Java")
 }
-func (client *CourseClientImpl) LearnPiano() {
+func (client *CourseClient) LearnPiano() {
 	fmt.Println("Learn Piano")
 }
-func NewClient() CourseClient {
-	return &CourseClientImpl{}
-	//虽然返回的是一个指针，但是编译器自动将其视为实现了接口的类型
-	//所以最后返回是一个CourseClient
+
+func NewClient() *CourseClient {
+	return &CourseClient{}
 }
