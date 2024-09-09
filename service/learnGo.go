@@ -1,10 +1,6 @@
 package service
 
-type ICourseService interface {
-	LearnGo()
-}
-
-// ClientProxy 我这个服务需要使用底层的哪一个组件，就声明哪一个组件
+// ClientProxy 使用代理接口，我这个服务需要使用底层的哪一个组件，就声明哪一个组件
 type ClientProxy interface {
 	LearnGo()
 }
